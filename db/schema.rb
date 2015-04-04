@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150404214525) do
+ActiveRecord::Schema.define(version: 20150404231133) do
 
   create_table "buildings", force: :cascade do |t|
-    t.integer  "building_num"
+    t.string   "building_num"
     t.string   "street"
     t.string   "street_suffix"
     t.string   "city"
-    t.integer  "zip"
+    t.string   "zip"
     t.integer  "block"
     t.integer  "lot"
     t.integer  "office_id"
