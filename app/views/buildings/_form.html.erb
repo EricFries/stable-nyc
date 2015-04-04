@@ -1,0 +1,6 @@
+<%= simple_form_for(@building) do |f| %>
+<%= f.input :building_num, :label => "Building Number" %>
+<%= f.input :street %>
+<%= f.input :street_suffix, :label => "Street Suffix", collection: ["AVE","BLVD","CT","DR","HTS","HWY","LN","PARK","PKWY","PL","RD","ST","TER"] %>
+<%= f.button :submit, "Search" %>
+<% end %>
