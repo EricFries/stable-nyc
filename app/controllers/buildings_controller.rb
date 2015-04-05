@@ -8,8 +8,11 @@ class BuildingsController < ApplicationController
   end
 
   #Create a new building object based on the user input in order to render the view.  It is not saved to the database.
+  # :street in building_params needs to be upcase to match the database records (which are all upcased)
   def create
-    @building = Building.find_by(building_params)
+    search = building_params
+    search[:street] = search[:street].upcase
+    @building = Building.find_by(search)
 
     if !@building 
       @building = Building.new(building_params)
