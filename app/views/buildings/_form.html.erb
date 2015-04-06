@@ -1,7 +1,8 @@
  <h3>Enter a New York City address to see if the building contains one or more rent-stabilized units.</h3>
 <%= simple_form_for(@building) do |f| %>
-<%= f.input :building_num, :label => "Building Number" %>
-<%= f.input :street %>
-<%= f.input :street_suffix, :label => "Street Suffix", collection: ["AVE","BLVD","CT","DR","HTS","HWY","LN","PARK","PKWY","PL","RD","ST","TER"] %>
-<%= f.button :submit, "Search" %>
+	<%= f.input :building_num, :label => "Building Number" %>
+	<%= f.input :street %>
+	<%= f.input :street_suffix, :label => "Street Suffix", collection: ["AVE","BLVD","CT","DR","HTS","HWY","LN","PARK","PKWY","PL","RD","ST","TER"] %>
+	<%= f.input :borough, collection: ["Brooklyn", "Manhattan", "Queens", "Bronx", "Staten Island"] %>
+	<%= f.button :submit, "Search" %>
 <% end %>

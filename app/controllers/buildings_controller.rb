@@ -26,6 +26,12 @@ class BuildingsController < ApplicationController
   end
   helper_method :in_database?
 
+  #fix queens
+  def get_office
+    @office = Office.find_by(:city => params[:building][:borough].upcase)
+  end
+  helper_method :get_office
+
 
   private
   def building_params

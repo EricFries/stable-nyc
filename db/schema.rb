@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150404231133) do
+ActiveRecord::Schema.define(version: 20150405210807) do
 
   create_table "buildings", force: :cascade do |t|
     t.string   "building_num"
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 20150404231133) do
     t.string   "internal_address"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.string   "map_link"
   end
 
   create_table "statuses", force: :cascade do |t|
