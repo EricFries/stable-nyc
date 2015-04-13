@@ -64,3 +64,5 @@ group :production do
 end
 
 gem 'bootstrap-sass', '~> 3.1.1'
+
+ruby "2.2.0"
