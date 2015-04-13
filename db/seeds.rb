@@ -8,14 +8,14 @@
 require 'csv'    
 
 #Adds buildings to database from CSV exported from original Sinatra app
-csv_text = File.read('db/buildings.csv')
-csv = CSV.parse(csv_text, :headers => true)
-csv.each do |row|
-  Building.create!(row.to_hash)
-
-#Adds offices to database from CSV exported from original Sinatra app
-# csv_text = File.read('db/offices.csv')
+# csv_text = File.read('db/buildings.csv')
 # csv = CSV.parse(csv_text, :headers => true)
 # csv.each do |row|
-#   Office.create!(row.to_hash)
+#   Building.create!(row.to_hash)
+
+#Adds offices to database from CSV exported from original Sinatra app
+csv_text = File.read('db/offices.csv')
+csv = CSV.parse(csv_text, :headers => true)
+csv.each do |row|
+  Office.create!(row.to_hash)
 end
