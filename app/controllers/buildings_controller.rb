@@ -26,9 +26,13 @@ class BuildingsController < ApplicationController
   end
   helper_method :in_database?
 
-  #fix queens
+  #The Queens office is an edge case because it uses the neighborhood Jamaica as its city name.
   def get_office
+    if params[:building][:borough] == "Queens"
+      @office = Office.find_by(:city => "JAMAICA")
+    else
       @office = Office.find_by(:city => params[:building][:borough].upcase)
+    end
   end
   helper_method :get_office
 
