@@ -2,39 +2,33 @@
 
 ## Description
 
-Add a short description of your app.
+The rent stabilization status of a New York City residence building can be hard to determine. The data is public, but only in the form of five separate PDF files on the [New York Rent Guidelines Board site](http://nycrgb.org/html/resources/zip.html).
 
-## Screenshots
+To make this data more accessible, [Stable.nyc](www.stable.nyc) allows NYC tenants search their building and easily find out if it is subject to stabilization policies. After checking the site's database, users can determine which borough office they need to contact to learn more about their housing rights.
 
-Add some spiffy screenshots of your app here.
 
 ## Background
 
-Why did you want to make this app? What was your development process
-like?
+Eric Fries and Rebecca Eakins created a Sinatra version of this project as part of their work in [The Flatiron School](http://flatironschool.com/web)'s web immersive program. Now, we're bringing you the Ruby on Rails version and deploying it to production.
 
 ## Features
 
-Bullet point some of the key features of your app here.
+- Relational database
+- PDF parsing executibles in the lib
+- Google Maps API integration
 
 ## Usage
 
-How do users use your app?
-
-## Development/Contribution
-
-Explain how people can contribute to your app. How should they write tests?
-Any things in particular you'd like to see in pull requests?
+To use the app, simply enter your address in the search bar and see if NYC rent stabilization policies apply to your building.
 
 ## Future
 
-What features are you currently working on? Only mention things that you
-actually are implementing. No pie-in-the-sky-never-gonna-happen stuff.
+- Deploy to production
 
-## Author
+## Authors
 
-Link to your blog, twitter, etc!
+[Eric Fries](http://ericfries.github.io/) and [Rebecca Eakins](www.eakins.io) are collaborating on this project.
 
 ## License
 
-Stable Nyc is MIT Licensed. See LICENSE for details.
+Stable NYC is MIT Licensed. See LICENSE for details.
