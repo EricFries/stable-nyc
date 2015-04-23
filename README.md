@@ -1,10 +1,10 @@
-# Stable Nyc
+# Stable Brooklyn
 
 ## Description
 
 The rent stabilization status of a New York City residence building can be hard to determine. The data is public, but only in the form of five separate PDF files on the [New York Rent Guidelines Board site](http://nycrgb.org/html/resources/zip.html).
 
-To make this data more accessible, [Stable.nyc](www.stable.nyc) allows NYC tenants search their building and easily find out if it is subject to stabilization policies. After checking the site's database, users can determine which borough office they need to contact to learn more about their housing rights.
+To make this data more accessible, [Stable Brooklyn](http://stable-brooklyn.herokuapp.com/) helps Brooklyn tenants search their building and easily find out if it is subject to stabilization policies. After checking the site's database, users can determine which borough office they need to contact to learn more about their housing rights.
 
 
 ## Background
@@ -23,12 +23,10 @@ To use the app, simply enter your address in the search bar and see if NYC rent 
 
 ## Future
 
-- Deploy to production
+- Create an API of the data
+- Include csv exports
+
 
 ## Authors
 
 [Eric Fries](http://ericfries.github.io/) and [Rebecca Eakins](www.eakins.io) are collaborating on this project.
-
-## License
-
-Stable NYC is MIT Licensed. See LICENSE for details.
