@@ -8,15 +8,22 @@
   <%= analytics_init if Rails.env.production? %>
 </head>
 <body>
+	<div class="container">
+		<div class="col-md-8 col-md-offset-2">
 
-<div class="container">
+		<center>
+			<h1><%= link_to "Stable|Brooklyn", root_path %></h1>
+		</center>
 
-<h1><%= link_to "Stable|Brooklyn", root_path %></h1>
+		<%= yield %>
 
-<%= yield %>
+		</div>
+	</div>
 
-</container>
-
-<footer><a href="http://nycrgb.org/html/resources/zip.html" target="_blank">Data Source</a></footer>
+	<div class="container">
+		<div class="col-md-12">
+			<footer><a href="http://nycrgb.org/html/resources/zip.html" target="_blank">Data Source</a></footer>
+		</div>
+	<div>
 </body>
 </html>
