@@ -5,6 +5,8 @@ root 'buildings#new'
   resources :offices, only: [:index, :show]
   resources :buildings, only: [:index, :new, :create, :show]
 
+  get 'building/:building_num/:street/:street_suffix' => 'buildings#search'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

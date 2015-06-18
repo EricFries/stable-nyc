@@ -13,11 +13,23 @@ class BuildingsController < ApplicationController
     search = building_params
     search[:street] = search[:street].upcase
     @building = Building.find_by(search)
-
     if !@building 
       @building = Building.new(building_params)
     end
     render 'show'
+  end
+
+  def search
+    params[:street] = params[:street].upcase
+    params[:street_suffix] = params[:street_suffix].upcase
+    @building = Building.find_by(:building_num => params[:building_num], :street => params[:street], :street_suffix => params[:street_suffix])
+    if !@building 
+      @building = Building.new(:building_num => params[:building_num], :street => params[:street], :street_suffix => params[:street_suffix])
+    end
+    respond_to do |format|
+      format.js { render :show }
+      format.html { render :show }
+    end
   end
 
   #Buildings with zipcodes are in the database since the form does not prompt the user to provide a zip
