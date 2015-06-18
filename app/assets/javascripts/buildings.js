@@ -1,4 +1,5 @@
 $(document).ready(function(){
+	searchAgainListener();
 	$('.new_building').on('submit',function(e){
 		e.preventDefault();
 		e.stopImmediatePropagation();
@@ -10,3 +11,13 @@ $(document).ready(function(){
 		});
 	});
 });
+
+function searchAgainListener(){
+	$('#results').on('click', '#search-again', function(e){
+		e.preventDefault();
+		$('#search-instructions').fadeIn();
+		$('#result').fadeOut();
+		$('#map').fadeOut();
+		$('.new_building').fadeIn();
+	});
+}
