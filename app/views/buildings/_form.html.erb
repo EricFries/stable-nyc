@@ -1,11 +1,21 @@
  <h3 id="search-instructions">Enter a Brooklyn address to see if the building contains one or more rent-stabilized units.</h3>
 
 <%= form_for @building, :url => '/', :method => :get do |f| %>
-	<%= f.label :building_num, "Building Number" %>
-	<%= f.text_field :building_num, :label => "Building Number", :required => true %>
-	<%= f.label :street, "Street" %>
-	<%= f.text_field :street, :required => true %>
-	<%= f.label :street_suffix, "Street Suffix" %>
-	<%= f.select :street_suffix, ["AVE","BLVD","CT","DR","HTS","HWY","LN","PARK","PKWY","PL","RD","ST","TER"], :required => true %>
-	<%= f.submit "Search" %>
+
+	<div class = 'form-group'>
+		<%= f.label :building_num, "Building Number" %><br>
+		<%= f.text_field :building_num, :label => "Building Number", :required => true, :class => 'form-control' %><br>
+	</div>
+
+	<div class = 'form-group'>
+		<%= f.label :street, "Street Name" %><br>
+		<%= f.text_field :street, :required => true, :class => 'form-control' %><br>
+	</div>
+
+	<div class = 'form-group'>
+		<%= f.label :street_suffix, "Street Suffix" %>
+		<%= f.select :street_suffix, ["AVE","BLVD","CT","DR","HTS","HWY","LN","PARK","PKWY","PL","RD","ST","TER"], {}, {:class => 'form-control'} %><br>
+	</div>
+
+	<%= f.submit "Search", :class => "btn btn-primary" %>
 <% end %>
