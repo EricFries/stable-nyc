@@ -3,12 +3,27 @@ $(document).ready(function(){
 	$('.new_building').on('submit',function(e){
 		e.preventDefault();
 		e.stopImmediatePropagation();
-		var url = 'building/' + $("#building_building_num").val() + '/' + $("#building_street").val() + '/' + $("#building_street_suffix").val();
-		$.ajax({
-			url: url,
-			method: 'get',
-			dataType: 'script'
-		});
+		var buildingNum = $("#building_building_num").val();
+		var street = $("#building_street").val();
+		var streetSuffix = $("#building_street_suffix").val();
+		var url = 'building/' + buildingNum + '/' + street + '/' + streetSuffix;
+		if(buildingNum && street && streetSuffix){
+			$.ajax({
+				url: url,
+				method: 'get',
+				dataType: 'script'
+			});
+		}
+		else if(!buildingNum && !street){
+			$('#building_building_num').attr('placeholder', 'Enter a building number');
+			$('#building_street').attr('placeholder', 'Enter a street');
+			}
+		else if(!buildingNum){
+			$('#building_building_num').attr('placeholder', 'Enter a building number');
+			}
+		else if(!street){
+			$('#building_street').attr('placeholder', 'Enter a street');
+			}
 	});
 });
 
