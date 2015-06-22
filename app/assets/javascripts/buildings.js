@@ -2,7 +2,7 @@ $(document).ready(function(){
 	searchAgainListener();
 	$('.new_building').on('submit',function(e){
 		e.preventDefault();
-		e.stopImmediatePropagation();
+		e.stopPropagation();
 		var buildingNum = $("#building_building_num").val();
 		var street = $("#building_street").val();
 		var streetSuffix = $("#building_street_suffix").val();
@@ -28,11 +28,12 @@ $(document).ready(function(){
 });
 
 function searchAgainListener(){
-	$('#results').on('click', '#search-again', function(e){
+	$('footer').on('click', '#search-again', function(e){
 		e.preventDefault();
-		$('#search-instructions').fadeIn();
-		$('#result').fadeOut();
+		$('#results').empty();
 		$('#map').fadeOut();
+		$('#search-instructions').fadeIn();
 		$('.new_building').fadeIn();
+		$(this).remove();
 	});
 }
