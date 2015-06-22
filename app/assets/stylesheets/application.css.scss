@@ -40,9 +40,15 @@ body {
 	margin: 0 auto;
 }
 
-div, iframe{
+div{
 	margin: 0 auto;
 	display: block;
+}
+
+iframe{
+	margin: 0 auto;
+	display: block;
+  padding-bottom: 10px;
 }
 
 #result{

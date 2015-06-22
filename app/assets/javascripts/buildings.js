@@ -33,6 +33,8 @@ function searchAgainListener(){
 		$('#results').empty();
 		$('#map').fadeOut();
 		$('#search-instructions').fadeIn();
+		$('#building_building_num').val('');
+		$('#building_street').val('');
 		$('.new_building').fadeIn();
 		$(this).remove();
 	});
