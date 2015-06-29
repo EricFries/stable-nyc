@@ -1,4 +1,7 @@
+<div class="col-md-8 col-md-offset-2">
+
  <h3 id="search-instructions">Enter a Brooklyn address to see if the building contains one or more rent-stabilized units.</h3>
+
 
 <%= form_for @building, :url => '/', :method => :get do |f| %>
 
@@ -19,3 +22,4 @@
 
 	<%= f.submit "Search", :class => "btn btn-primary" %>
 <% end %>
+</div>
