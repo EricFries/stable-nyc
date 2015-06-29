@@ -12,6 +12,7 @@ $(document).ready(function(){
     };
     map = new google.maps.Map(document.getElementById("directions-map"), mapOptions);
     directionsDisplay.setMap(map);
+    directionsDisplay.setPanel(document.getElementById("direction-panel"));
   }
 
   function calcRoute() {
@@ -20,12 +21,14 @@ $(document).ready(function(){
     var request = {
       origin:start,
       destination:end,
-      travelMode: google.maps.TravelMode.TRANSIT
+      travelMode: google.maps.TravelMode.TRANSIT,
+      provideRouteAlternatives: true
     };
-    debugger
+
     directionsService.route(request, function(result, status) {
       if (status == google.maps.DirectionsStatus.OK) {
         directionsDisplay.setDirections(result);
+        debugger
       }
     });
   }
