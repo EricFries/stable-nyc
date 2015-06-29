@@ -27,7 +27,7 @@
 	</div>
 </div>
 
-<div class="col-md-8 col-md-offset-2">
+<div class="col-md-8 col-md-offset-2" id="directions">
 	<h2>What are you waiting for? Here are transit directions to DHCR:</h2>
 </div>
 
@@ -42,6 +42,9 @@
 
 <div class="col-md-8 col-md-offset-2">
 	<center>
-		<button id="search-again", class="btn btn-default">Search Again</button>
+		<form action= <%= root_path %>>
+	    <input type="submit" value="Search Again" class="btn btn-default">
+		</form>
+
 	</center>
 </div>

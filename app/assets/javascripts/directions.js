@@ -5,9 +5,9 @@ $(document).ready(function(){
 
   function initialize() {
     directionsDisplay = new google.maps.DirectionsRenderer();
-    var start = new google.maps.LatLng(41.850033, -87.6500523);
+    var start = new google.maps.LatLng(40.6928, -73.9903);
     var mapOptions = {
-      zoom:7,
+      zoom: 14,
       center: start
     };
     map = new google.maps.Map(document.getElementById("directions-map"), mapOptions);
