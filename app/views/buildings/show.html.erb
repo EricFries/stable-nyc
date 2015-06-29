@@ -1,35 +1,47 @@
+<div class="container">
+	<div class="col-md-8 col-md-offset-2">
+	<% if in_database? %>
+		<div id="result">
+		<center>
+			<h3 id="start-address"><%= "#{@building.building_num} #{@building.street} #{@building.street_suffix}, #{@building.city}, NY #{@building.zip}" %></h3>
+			<h4>At least one apartment in this building is rent-stabilized!</h4>
+		
+		<p>To learn more about a specific unit in this building, including its rent history, call the <a href="http://www.nyshcr.org/AboutUs/contact.htm" target="_blank">Division of Homes and Community Renewal's</a> Infoline at 718-739-6400 or visit DHCR at:</p>
+		
 
-<% if in_database? %>
-	<div id="result">
-		<h3 id="start-address"><%= "#{@building.building_num} #{@building.street} #{@building.street_suffix}, #{@building.city}, NY #{@building.zip}" %></h3>
-		<h4>At least one apartment in this building is rent-stabilized!</h4>
+			<p id="end-address"><%= @building.office.building_num %> <%= @building.office.street %> <%= @building.office.street_suffix %>, <%= @building.office.city %>, NY <%= @building.office.zip  %></p>
+		</center>
+	</div>
+
+	<% else %>
+
+		<h3 id="start-address"><%= "#{@building.building_num} #{@building.street} #{@building.street_suffix.downcase.capitalize}" %> Brooklyn, NY</h3>
+		<h4>This building isn't in our records.</h4>
+		<p class="result">Contact the <a href="http://www.nyshcr.org/AboutUs/contact.htm" target="_blank">Division of Homes and Community Renewal's</a> Infoline at 718-739-6400 or visit the following office to find out if it is rent stabilized:</p>
+
+		<center>
+			<p id="end-address"><%= get_office.building_num %> <%= get_office.street %> <%=get_office.street_suffix %>, <%= get_office.city %>, NY <%=get_office.zip  %></p>
+		</center>
+
+	<% end %>
+	</div>
+</div>
+
+<div class="col-md-8 col-md-offset-2">
+	<h2>What are you waiting for? Here are transit directions to DHCR:</h2>
+</div>
+
+<div class="col-md-6">
+	<div id="directions-map"></div>
+</div>
 	
-	<p>To learn more about a specific unit in this building, including its rent history, call the <a href="http://www.nyshcr.org/AboutUs/contact.htm" target="_blank">Division of Homes and Community Renewal's</a> Infoline at 718-739-6400 or visit DHCR at:</p>
+<div class="col-md-6">
+	<div id="direction-panel"></div>
+</div>
 
+
+<div class="col-md-8 col-md-offset-2">
 	<center>
-		<p id="end-address"><%= @building.office.building_num %> <%= @building.office.street %> <%= @building.office.street_suffix %>, <%= @building.office.city %>, NY <%= @building.office.zip  %></p>
+		<button id="search-again", class="btn btn-default">Search Again</button>
 	</center>
 </div>
-
-<% else %>
-
-	<h3 id="start-address"><%= "#{@building.building_num} #{@building.street} #{@building.street_suffix.downcase.capitalize}" %> Brooklyn, NY</h3>
-	<h4>This building isn't in our records.</h4>
-	<p class="result">Contact the <a href="http://www.nyshcr.org/AboutUs/contact.htm" target="_blank">Division of Homes and Community Renewal's</a> Infoline at 718-739-6400 or visit the following office to find out if it is rent stabilized:</p>
-
-	<center>
-		<p id="end-address"><%= get_office.building_num %> <%= get_office.street %> <%=get_office.street_suffix %>, <%= get_office.city %>, NY <%=get_office.zip  %></p>
-	</center>
-
-<% end %>
-
-<div id="directions-map">
-</div>
-
-
-<div id="direction-panel">
-</div>
-
-<center>
-	<%= link_to 'Search Again', root_path %>
-</center>
