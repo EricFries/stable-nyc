@@ -1,13 +1,14 @@
 <% if in_database? %>
 	<div id="result">
-		<h3><%= "#{@building.building_num} #{@building.street} #{@building.street_suffix}, #{@building.city}, NY #{@building.zip}" %></h3>
+		<h3 id="start-address"><%= "#{@building.building_num} #{@building.street} #{@building.street_suffix}, #{@building.city}, NY #{@building.zip}" %></h3>
 		<h4>At least one apartment in this building is rent-stabilized!</h4>
 	
-	<p>To learn more about a specific unit in this building, including its rent history, call the <a href="http://www.nyshcr.org/AboutUs/contact.htm" target="_blank">Division of Homes and Community Renewal's</a> Infoline at 718-739-6400 or visit the following office.</p>
+	<p>To learn more about a specific unit in this building, including its rent history, call the <a href="http://www.nyshcr.org/AboutUs/contact.htm" target="_blank">Division of Homes and Community Renewal's</a> Infoline at 718-739-6400 or visit DHCR at:</p>
+
+	<center>
+		<p id="end-address"><%= @building.office.building_num %> <%= @building.office.street %> <%= @building.office.street_suffix %>, <%= @building.office.city %>, NY <%= @building.office.zip  %></p>
+	</center>
 </div>
-	<div id="map">
-		<%= @building.office.map_link.html_safe %>
-	</div>
 
 
 <% else %>
@@ -15,10 +16,11 @@
 	<h3><%= "#{@building.building_num} #{@building.street} #{@building.street_suffix.downcase.capitalize}" %></h3>
 	<h4>This building isn't in our records.</h4>
 	<p class="result">Contact the <a href="http://www.nyshcr.org/AboutUs/contact.htm" target="_blank">Division of Homes and Community Renewal's</a> Infoline at 718-739-6400 or visit the following office to find out if it is rent stabilized:</p>
-	
-<%= get_office.map_link.html_safe %>
 
 <% end %>
+
+<div id="directions-map">
+</div>
 
 <center>
 	<%= link_to 'Search Again', root_path %>

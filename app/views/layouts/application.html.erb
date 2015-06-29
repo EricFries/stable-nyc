@@ -2,6 +2,8 @@
 <html>
 <head>
   <title>Stable|Brooklyn</title>
+    <script type="text/javascript"
+	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAf-r04xxAgfy88_jFtg9NSoMySRmTmmf8"></script>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
@@ -15,6 +17,7 @@
 			<h1><%= link_to "Stable|Brooklyn", root_path %></h1>
 		</center>
 		<div id="results"></div>
+		
 		<%= yield %>
 
 		<center>

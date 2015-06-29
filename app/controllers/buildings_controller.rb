@@ -7,11 +7,6 @@ class BuildingsController < ApplicationController
   def index
   end
 
-  #Create a new building object based on the user input in order to render the view.  It is not saved to the database.
-  # :street in building_params needs to be upcase to match the database records (which are all upcased)
-  def create
-  end
-
   def search
     params[:street] = params[:street].upcase
     params[:street_suffix] = params[:street_suffix].upcase
