@@ -19,13 +19,23 @@
 		</div>
 	</div>
 		
-
-
 	<%= yield %>
+
+	<div class="col-md-6">
+			<div id="directions-map"></div>
+	</div>
+		
+	<div class="col-md-6">
+		<div id="direction-panel"></div>
+	</div>
+
 
 	<div class="col-md-8 col-md-offset-2">
 		<footer>
 			<center>
+				<form action= <%= root_path %>>
+		    	<input type="submit" value="Search Again" id="search-again" class="btn btn-default">
+				</form>
 				<a href="http://nycrgb.org/html/resources/zip.html" target="_blank">Data Source</a>
 			</center>
 		</footer>

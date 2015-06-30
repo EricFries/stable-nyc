@@ -1,14 +1,15 @@
 $('#search-instructions').hide();
 $('.new_building').hide();
 $('#results').show();
+$('#search-again').show();
 
 <% if in_database? %>
-$('#results').append('<div id="result"><h3><%= "#{@building.building_num} #{@building.street} #{@building.street_suffix}, #{@building.city}, NY #{@building.zip}" %></h3><h4>At least one apartment in this building is rent-stabilized!</h4><p>To learn more about a specific unit in this building, including its rent history, call the <a href="http://www.nyshcr.org/AboutUs/contact.htm" target="_blank">Division of Homes and Community Renewals</a> Infoline at 718-739-6400 or visit the following office.</p></div><div id="map"><%= @building.office.map_link.html_safe %></div>');
+	$('#results').append('<div id="result"><h3 id="start-address"><%= "#{@building.building_num} #{@building.street} #{@building.street_suffix}, #{@building.city}, NY #{@building.zip}" %></h3><h4>At least one apartment in this building is rent-stabilized!</h4><p>To learn more about a specific unit in this building, including its rent history, call the <a href="http://www.nyshcr.org/AboutUs/contact.htm" target="_blank">Division of Homes and Community Renewals</a> Infoline at 718-739-6400 or visit the following office: </p><p id="end-address"><%= @building.office.building_num %> <%= @building.office.street %> <%= @building.office.street_suffix %>, <%= @building.office.city %>, NY <%= @building.office.zip  %></p>');
+
+	getDirections();
 
 <% else %>
+	$('#results').append('<h3 id="start-address"><%= "#{@building.building_num} #{@building.street} #{@building.street_suffix.downcase.capitalize}" %> BROOKLYN, NY</h3><h4>This building is not in our records.</h4><p class="result">Contact the <a href="http://www.nyshcr.org/AboutUs/contact.htm" target="_blank">Division of Homes and Community Renewals</a> Infoline at 718-739-6400 or visit the following office to find out if it is rent stabilized:</p><p id="end-address"><%= get_office.building_num %> <%= get_office.street %> <%=get_office.street_suffix %>, <%= get_office.city %>, NY <%=get_office.zip  %></p>');
 
-$('#results').append('<h3><%= "#{@building.building_num} #{@building.street} #{@building.street_suffix.downcase.capitalize}" %></h3><h4>This building is not in our records.</h4><p class="result">Contact the <a href="http://www.nyshcr.org/AboutUs/contact.htm" target="_blank">Division of Homes and Community Renewals</a> Infoline at 718-739-6400 or visit the following office to find out if it is rent stabilized:</p><%= get_office.map_link.html_safe %>');
-
+	getDirections();
 <% end %>
-
-$('footer').prepend('<center><button id="search-again", class="btn btn-default">Search Again</button></center><br>')

@@ -1,5 +1,9 @@
 $(document).ready(function(){
 	searchAgainListener();
+	$('#direction-panel').hide();
+	$('#directions-map').hide();
+	$('#search-again').hide();
+
 	$('.new_building').on('submit',function(e){
 		e.preventDefault();
 		e.stopPropagation();
@@ -29,13 +33,18 @@ $(document).ready(function(){
 
 function searchAgainListener(){
 	$('footer').on('click', '#search-again', function(e){
+		// tests if div is on page
+		// it will not be on an html show page so preventDefault will not run and button will act normally (i.e., return to root by refreshing page)
+		if ($('#search-instructions').length){
 		e.preventDefault();
 		$('#results').empty();
-		$('#map').fadeOut();
 		$('#search-instructions').fadeIn();
 		$('#building_building_num').val('');
 		$('#building_street').val('');
 		$('.new_building').fadeIn();
-		$(this).remove();
+		$('#direction-panel').hide();
+		$('#directions-map').hide();
+		$(this).hide();
+		}
 	});
 }
