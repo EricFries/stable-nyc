@@ -43,6 +43,7 @@ function searchAgainListener(){
 		$('#building_street').val('');
 		$('.new_building').fadeIn();
 		$('#direction-panel').hide();
+		$('#direction-panel').empty();
 		$('#directions-map').hide();
 		$(this).hide();
 		}
