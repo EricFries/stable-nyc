@@ -1,0 +1,7 @@
+id,name,building_num,street,street_suffix,city,zip,phone_num,internal_address
+1,Bronx Borough Rent Office,2400,HALSEY,ST,BRONX,10461,718-430-0880,1st FLOOR
+2,Brooklyn Borough Rent Office,55,HANSON,PL,BROOKLYN,11217,718-722-4778,Room 702
+3,"Manhattan (Uptown) Adam Clayton Powell, Jr. Office Building",163,WEST 125th,ST,NEW YORK,10027,212-961-8930,5th FLOOR
+4,Manhattan (Downtown) Rent Office,25,BEAVER,ST,NEW YORK,10004,212-480-6238,5th FLOOR
+5,Queens Central Office,9231,UNION HALL,ST,JAMAICA,11433,718-739-6400,
+6,Staten Island Borough Rent Office,60,BAY,ST,STATEN ISLAND,10301,718-816-0278,7th FLOOR

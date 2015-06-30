@@ -13,15 +13,14 @@
 		</div>
 
 	<% else %>
-
-		<h3 id="start-address"><%= "#{@building.building_num} #{@building.street} #{@building.street_suffix.downcase.capitalize}" %> Brooklyn, NY</h3>
-		<h4>This building isn't in our records.</h4>
-		<p class="result">Contact the <a href="http://www.nyshcr.org/AboutUs/contact.htm" target="_blank">Division of Homes and Community Renewal's</a> Infoline at 718-739-6400 or visit the following office to find out if it is rent stabilized:</p>
-
-		<center>
-			<p id="end-address"><%= get_office.building_num %> <%= get_office.street %> <%=get_office.street_suffix %>, <%= get_office.city %>, NY <%=get_office.zip  %></p>
-		</center>
-
+		<div id="result">
+			<center>
+				<h3 id="start-address"><%= "#{@building.building_num} #{@building.street} #{@building.street_suffix.downcase.capitalize}" %> Brooklyn, NY</h3>
+				<h4>This building isn't in our records.</h4>
+				<p class="result">Contact the <a href="http://www.nyshcr.org/AboutUs/contact.htm" target="_blank">Division of Homes and Community Renewal's</a> Infoline at 718-739-6400 or visit the following office to find out if units in the building are rent-stabilized:</p>
+				<p id="end-address"><%= get_office.building_num %> <%= get_office.street %> <%=get_office.street_suffix %>, <%= get_office.city %>, NY <%=get_office.zip  %></p>
+			</center>
+		</div>
 	<% end %>
 	</div>
 </div>
